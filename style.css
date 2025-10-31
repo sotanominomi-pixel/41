@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.mode-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.mode-buttons button {
+    background: none;
+    border: 2px solid #000;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.mode-buttons button:hover {
+    background: #000;
+    color: #fff;
+}
+
+#languageLabel {
+    font-size: 14px;
+    align-self: center;
+    color: #000;
+}
+
+.mode {
+    display: none;
+}
+
+.mode.active {
+    display: block;
+}
+
+#clock-time, #stopwatch-time {
+    font-size: 64px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+#speedControl {
+    margin-top: 20px;
+}
+
+#speedSlider {
+    width: 80%;
+    accent-color: #000;
+}
+
+.stopwatch-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stopwatch-buttons button {
+    background: none;
+    border: 2px solid #000;
+    border-radius: 10px;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.stopwatch-buttons button:hover {
+    background: #000;
+    color: #fff;
+}
+
+#laps {
+    list-style: none;
+    padding: 0;
+}
+
+#laps li {
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+
+#alarmList {
+    margin-bottom: 15px;
+}
+
+#addAlarmBtn {
+    background: none;
+    border: 2px solid #000;
+    border-radius: 10px;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#addAlarmBtn:hover {
+    background: #000;
+    color: #fff;
+}
+
+#settings {
+    font-size: 18px;
+}
+
+#settings select {
+    font-size: 16px;
+    margin-top: 10px;
+}
