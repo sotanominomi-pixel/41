@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N Clock</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 0.3em 0;
+        }
+
+        button {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 12px;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        #controls {
+            margin-top: 20px;
+        }
+
+        #laps {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        #modeButtons {
+            position: fixed;
+            bottom: 70px;
+            display: flex;
+            gap: 10px;
+        }
+
+        #settings {
+            position: fixed;
+            bottom: 20px;
+        }
+
+        #alarmList {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        input[type="range"] {
+            width: 250px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="clock" class="mode active">
+        <h1 id="clock-time">00:00</h1>
+    </div>
+
+    <div id="stopwatch" class="mode" style="display:none;">
+        <h1 id="stopwatch-time">00:00</h1>
+        <div id="controls">
+            <button id="startStopBtn" onclick="toggleStopwatch()">スタート</button>
+            <button id="lapBtn" onclick="recordLap()">ラップ</button>
+            <button id="resetBtn" onclick="resetStopwatch()">リセット</button>
+            <ul id="laps"></ul>
+        </div>
+    </div>
+
+    <div id="alarm" class="mode" style="display:none;">
+        <h1>アラーム</h1>
+        <button id="addAlarmBtn" onclick="addAlarm()">アラーム追加</button>
+        <ul id="alarmList"></ul>
+    </div>
+
+    <div id="modeButtons">
+        <button id="clockBtn" onclick="switchMode('clock')">時計</button>
+        <button id="stopwatchBtn" onclick="switchMode('stopwatch')">ストップウォッチ</button>
+        <button id="alarmBtn" onclick="switchMode('alarm')">アラーム</button>
+    </div>
+
+    <div id="settings">
+        <button id="settingsBtn" onclick="switchMode('settings')">設定</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
